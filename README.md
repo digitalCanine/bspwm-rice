@@ -214,7 +214,8 @@ pavucontrol     # Audio control
 firefox         # Web browser
 signal-desktop  # Messaging app
 simplescreenrecorder  # Screen recording
-
+feh             # Image viewer
+xorg
 ```
 
 ### Custom Scripts
