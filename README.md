@@ -195,6 +195,7 @@ Key configuration locations:
 ## 📋 Dependencies
 
 ```
+legcord
 bspwm           # Window manager
 sxhkd           # Hotkey daemon
 picom           # Compositor
