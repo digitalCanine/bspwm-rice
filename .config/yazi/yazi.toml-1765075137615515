@@ -1,0 +1,44 @@
+[manager]
+show_hidden = true
+
+
+[opener]
+
+edit = [
+	{ run = 'nvim "$@"', block = true },
+]
+
+image = [
+	{ run = 'feh "$@"', orphan = true },
+]
+
+video = [
+	{ run = 'mpv "$@"', orphan = true },
+]
+
+audio = [
+	{ run = 'strawberry "$@"', orphan = true },
+]
+
+
+[open]
+
+rules = [
+	{ name = "*.png", use = "image" },
+	{ name = "*.jpg", use = "image" },
+	{ name = "*.jpeg", use = "image" },
+	{ name = "*.gif", use = "image" },
+	{ name = "*.webp", use = "image" },
+
+	{ name = "*.mp4", use = "video" },
+	{ name = "*.mkv", use = "video" },
+	{ name = "*.webm", use = "video" },
+
+	{ name = "*.mp3", use = "audio" },
+	{ name = "*.flac", use = "audio" },
+	{ name = "*.wav", use = "audio" },
+	{ name = "*.ogg", use = "audio" },
+
+	{ mime = "text/*", use = "edit" },
+]
+

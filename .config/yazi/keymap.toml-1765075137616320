@@ -1,0 +1,13 @@
+[manager]
+
+prepend_keymap = [
+
+	{ on = ["+"],     run = "cd /home/carrie", desc = "Home" },
+	{ on = ["+", "f"], run = "cd /home/carrie/Documents", desc = "Documents" },
+	{ on = ["+", "a"], run = "cd /home/carrie/Pictures",  desc = "Pictures" },
+	{ on = ["+", "c"], run = "cd /home/carrie/.config",   desc = "Config" },
+	{ on = ["+", "d"], run = "cd /home/carrie/Downloads", desc = "Downloads" },
+	{ on = ["+", "v"], run = "cd /home/carrie/Videos",    desc = "Videos" },
+	{ on = ["+", "h"], run = "cd /drives",                desc = "Drives" },
+]
+

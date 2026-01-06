@@ -1,0 +1,103 @@
+[mgr]
+show_hidden = true
+
+
+[opener]
+
+# Editor
+edit = [
+	{ run = 'nvim "$@"', block = true },
+]
+
+# Default image viewer
+image = [
+	{ run = 'feh "$@"', orphan = true },
+]
+
+# Default video player
+video = [
+	{ run = 'mpv "$@"', orphan = true },
+]
+
+# Default music player
+audio = [
+	{ run = 'strawberry "$@"', orphan = true },
+]
+
+
+[open]
+
+
+rules = [
+
+  # Image formats
+	{ name = "*.png", use = "image" },
+	{ name = "*.jpg", use = "image" },
+	{ name = "*.jpeg", use = "image" },
+	{ name = "*.gif", use = "image" },
+	{ name = "*.webp", use = "image" },
+
+  # Video formats
+	{ name = "*.mp4", use = "video" },
+	{ name = "*.mkv", use = "video" },
+	{ name = "*.webm", use = "video" },
+	{ name = "*.mp3", use = "audio" },
+	{ name = "*.flac", use = "audio" },
+	{ name = "*.wav", use = "audio" },
+	{ name = "*.ogg", use = "audio" },
+
+  # Text format
+	{ mime = "text/*", use = "edit" },
+]
+
+[plugin]
+prepend_previewers = [ 
+  
+  # Audio preview
+  { mime = "audio/*", run = "audio-preview" },
+
+  # Blender preview
+  { name = "*.blend", run = "blender-preview" },
+  { name = "*.blend1", run = "blender-preview" },
+
+  # Kira preview
+  { name = "*.kra", run = "krita-preview" },
+  { name = "*.kra~", run = "krita-preview" },
+
+  # Better markdown preview
+  { name = "*.md", run = "mdcat" },
+
+  # Office preview
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+
+  # Archive previews
+  { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch" },
+  
+  # Torrent prewview
+  { mime = "application/bittorrent", run = "torrent-preview" },
+]
+
+prepend_preloaders = [
+
+  # Audio preview
+  { mime = "audio/*", run = "audio-preview" },
+
+  # Blender preview
+  { name = "*.blend", run = "blender-preview" },
+  { name = "*.blend1", run = "blender-preview" },
+
+  # Kira previews
+  { name = "*.kra", run = "krita-preview" },
+  { name = "*.kra~", run = "krita-preview" },
+
+  # Office previews
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]

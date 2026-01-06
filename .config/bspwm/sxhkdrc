@@ -1,0 +1,107 @@
+# System binding
+super + {Return,p,v,d,x,b,period}
+    {kitty, \
+    pavucontrol, \
+    sh ~/.config/scripts/rofi-menus/clipboard-manager.sh, \
+    rofi -show drun, \
+    sh ~/.config/scripts/rofi-menus/powermenu.sh, \
+    sh ~/.config/scripts/toggle-bar.sh, \
+    sh ~/.config/scripts/rofi-menus/rofimoji.sh}
+
+# Screenshots
+Print
+    flameshot gui
+
+# DC-multivpn
+alt + shift + v
+  ~/.config/scripts/dc-multivpn/dc-multivpn.sh
+
+# Apps
+super + shift + {f,t,s,n,v,l,m}
+	{firefox, \
+	signal-desktop, \
+	simplescreenrecorder, \
+  kitty -e yazi, \
+  kitty -e nvim, \
+  sh /home/carrie/Documents/code/bash/lancer/lancer.sh, \
+  kitty -e spotatui, \}
+
+# Media control (volume)
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    sh ~/.config/scripts/volume.sh --device output --action {increase,decrease,toggle}
+
+XF86AudioMicMute
+	sh ~/.config/scripts/volume.sh --device input --action toggle
+
+# Media control (player)
+XF86Audio{Play,Pause,Next,Prev,Stop}
+	{playerctl play-pause, \
+	playerctl play-pause, \
+	playerctl next, \
+	playerctl previous, \
+	playerctl stop}
+
+ctrl + alt + {c,x,z}
+	{playerctl play-pause, \
+	playerctl next, \
+	playerctl previous}
+
+# Quit bspwm
+super + Delete
+	bspc quit	
+
+# Reload bspwm
+ctrl + shift + r
+	bspc wm -r
+
+# Reload sxhkd
+super + Escape + r
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config' -t 1500
+
+# Kill node
+super + q
+	bspc node -c
+
+# Floating/tiled node
+super + space
+	bspc node -t "~"{floating,tiled}
+
+# Fullscreen
+super + f
+  bspc node -t \~fullscreen
+
+# Move node
+super + {_,shift + }{Right,Left,Up,Down}
+	bspc node -{f,s} {
+		east, \
+		west, \
+		north, \
+		south}
+
+# Alt tab
+alt + Tab
+	bspc node -f last
+
+# Change desktop
+super + {1-9,0}
+	bspc desktop -f {1-9,10}
+
+# Move to next desktop
+super + ctrl + Right
+	bspc desktop -f next
+
+# Move to previous desktop
+super + ctrl + Left
+	bspc desktop -f prev
+
+# Move node to another desktop
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}'
+
+# Switch node
+super + shift + ctrl + {Left,Right,Up,Down}
+  {bspc node -s west, \
+    bspc node -s east, \
+    bspc node -s north, \
+    bspc node -s south}
+

@@ -1,0 +1,26 @@
+[manager] # <--- Use [manager], not [mgr]
+
+# ... your other single-key bindings might go here ...
+
+prepend_keymap = [
+
+	{ on = ["`", "`"], run = "cd /home/carrie",         desc = "Home" },
+	{ on = ["`", "f"], run = "cd /home/carrie/Documents", desc = "Documents" },
+	{ on = ["`", "a"], run = "cd /home/carrie/Pictures",  desc = "Pictures" },
+	{ on = ["`", "c"], run = "cd /home/carrie/.config",   desc = "Config" },
+	{ on = ["`", "d"], run = "cd /home/carrie/Downloads", desc = "Downloads" },
+	{ on = ["`", "v"], run = "cd /home/carrie/Videos",    desc = "Videos" },
+	{ on = ["`", "h"], run = "cd /drives",                desc = "Drives" },
+
+	{ on = ["n", "f"], run = "create --dir",            desc = "New Folder" },
+	{ on = ["n", "d"], run = "create",                  desc = "New File" },
+
+	{ on = ["c", "x"], run = "cut",                     desc = "Cut File" },
+	{ on = ["c", "c"], run = "yank",                    desc = "Copy File" },
+	{ on = ["c", "v"], run = "paste",                   desc = "Paste File" },
+]
+
+# Add the 'Right = "open"' line OUTSIDE and AFTER the list block.
+# Yazi reads simple key-value pairs like this separately from the list above.
+Right = "open"
+

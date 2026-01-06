@@ -1,0 +1,180 @@
+* {
+    main-bg:            #141414;
+    main-fg:            #feffd3;
+    main-br:            #8b9151;
+    main-ex:            #dd7c4c;
+    select-bg:          #1a1a1a;
+    select-fg:          #afb979;
+    dim:                #778284;
+    border-color:       #444649;
+    
+    background-color:   @main-bg;
+    text-color:         @main-fg;
+}
+
+window {
+    transparency:       "real";
+    background-color:   @main-bg;
+    width:              500px;
+    padding:            0px;
+    location:           north;
+    anchor:             north;
+    y-offset:           36;  /* Adjust to match your polybar height */
+    x-offset:           0;
+}
+
+mainbox {
+    background-color:   transparent;
+    spacing:            0px;
+    padding:            0px;
+    border:             0px;
+}
+
+/* Top bar - terminal prompt style */
+inputbar {
+    background-color:   transparent;
+    text-color:         @main-fg;
+    padding:            4px 12px;
+    spacing:            0px;
+    children:           [ prompt, entry ];
+}
+
+prompt {
+    background-color:   transparent;
+    text-color:         @main-ex;
+    padding:            0px 8px 0px 0px;
+    font:               "JetBrainsMono Nerd Font Bold 11";
+}
+
+/* Prompt shows like terminal: >> */
+prompt {
+    str: ">>";
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @main-fg;
+    placeholder:        "";
+    cursor:             text;
+    font:               "JetBrainsMono Nerd Font 12";
+}
+
+/* Message box (if used) */
+message {
+    background-color:   transparent;
+    padding:            8px 12px;
+}
+
+textbox {
+    text-color:         @main-fg;
+    background-color:   transparent;
+    font:               "JetBrainsMono Nerd Font 10";
+}
+
+/* List view - like ls/eza output */
+listview {
+    background-color:   transparent;
+    spacing:            0px;
+    padding:            8px 12px;
+    scrollbar:          false;
+    lines:              5;  /* 5 entries as requested */
+    fixed-height:       true;
+    columns:            1;
+    layout:             vertical;
+}
+
+/* List elements - ls output style */
+element {
+    background-color:   transparent;
+    text-color:         @main-fg;
+    padding:            4px 4px;
+    spacing:            0px;
+}
+
+element normal.normal {
+    background-color:   @main-bg;
+    text-color:         @main-fg;
+}
+
+element alternate.normal {
+    background-color:   @main-bg;
+    text-color:         @main-fg;
+}
+
+element normal.urgent {
+    background-color:   @main-bg;
+    text-color:         @main-ex;
+}
+
+element alternate.urgent {
+    background-color:   @main-bg;
+    text-color:         @main-ex;
+}
+
+element normal.active {
+    background-color:   @main-bg;
+    text-color:         @main-br;
+}
+
+element alternate.active {
+    background-color:   @main-bg;
+    text-color:         @main-br;
+}
+
+/* Selected item - like terminal cursor/highlight */
+element selected.normal {
+    background-color:   @select-bg;
+    text-color:         @select-fg;
+    border:             0px;
+}
+
+element selected.urgent {
+    background-color:   @select-bg;
+    text-color:         @main-ex;
+    border:             0px;
+}
+
+element selected.active {
+    background-color:   @select-bg;
+    text-color:         @select-fg;
+    border:             0px;
+}
+
+/* Icons - small and dim like ls indicators */
+element-icon {
+    background-color:   transparent;
+    size:               0.9em;
+    padding:            0px 6px 0px 0px;
+}
+
+/* Text - monospace for ls feel */
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    font:               "JetBrainsMono Nerd Font 11";
+}
+
+/* Selected text highlighting */
+element selected element-text {
+    text-color:         @select-fg;
+}
+
+/* Mode switcher - hide it since we're using >> prompt */
+mode-switcher {
+    enabled:            false;
+}
+
+button {
+    background-color:   transparent;
+    text-color:         @dim;
+    padding:            4px 10px;
+    border:             0px;
+    margin:             0px;
+    font:               "JetBrainsMono Nerd Font 10";
+}
+
+button selected {
+    background-color:   @select-bg;
+    text-color:         @select-fg;
+    border:             0px;
+}

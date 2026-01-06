@@ -1,0 +1,502 @@
+/* Terminal-Dark GTK3 Theme */
+/* Based on kitty terminal colors */
+
+/* Color Definitions */
+@define-color theme_bg_color #141414;
+@define-color theme_fg_color #feffd3;
+@define-color theme_base_color #1a1a1a;
+@define-color theme_text_color #feffd3;
+@define-color theme_selected_bg_color #e1c47d;
+@define-color theme_selected_fg_color #141414;
+@define-color insensitive_bg_color #262626;
+@define-color insensitive_fg_color #778284;
+@define-color borders #5a5d61;
+@define-color warning_color #dd7c4c;
+@define-color error_color #c06c43;
+@define-color success_color #cbd88c;
+
+/* Additional semantic colors */
+@define-color accent_color #e1c47d;
+@define-color accent_bg_color #e1c47d;
+@define-color accent_fg_color #141414;
+@define-color destructive_color #dd7c4c;
+@define-color destructive_bg_color #dd7c4c;
+@define-color destructive_fg_color #141414;
+
+/* Base styling */
+* {
+  outline-style: none;
+  font-family: "Courier New", "Consolas", "Monaco", monospace;
+  -gtk-outline-radius: 0;
+}
+
+/* Windows */
+window,
+.background {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+}
+
+/* Views (file lists, text areas, etc) */
+.view,
+textview text,
+iconview,
+.nautilus-window .view,
+.nemo-window .view {
+  background-color: @theme_base_color;
+  color: @theme_text_color;
+}
+
+.view:selected,
+.view:selected:focus,
+iconview:selected,
+iconview:selected:focus {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+/* Sidebars */
+.sidebar,
+sidebar,
+.nemo-window .sidebar {
+  background-color: #262626;
+  border-right: 1px solid @borders;
+}
+
+.sidebar row,
+sidebar row {
+  padding: 8px;
+  border-left: 3px solid transparent;
+}
+
+.sidebar row:hover,
+sidebar row:hover {
+  background-color: #303030;
+  border-left-color: @accent_color;
+}
+
+.sidebar row:selected,
+sidebar row:selected {
+  background-color: #303030;
+  color: @theme_fg_color;
+  border-left-color: @theme_fg_color;
+}
+
+/* Headerbars and Toolbars */
+headerbar,
+toolbar,
+.toolbar {
+  background-color: #262626;
+  color: @theme_fg_color;
+  border-bottom: 2px solid @borders;
+  padding: 8px;
+}
+
+headerbar button,
+toolbar button {
+  background-color: transparent;
+  color: @theme_fg_color;
+  border: 2px solid @borders;
+  border-radius: 0;
+  padding: 6px 12px;
+  min-height: 24px;
+}
+
+headerbar button:hover,
+toolbar button:hover {
+  background-color: #303030;
+  border-color: @accent_color;
+  color: @accent_color;
+}
+
+headerbar button:active,
+toolbar button:active,
+headerbar button:checked,
+toolbar button:checked {
+  background-color: @accent_color;
+  color: @accent_bg_color;
+}
+
+/* Regular Buttons */
+button {
+  background-color: #262626;
+  color: @theme_fg_color;
+  border: 2px solid @borders;
+  border-radius: 0;
+  padding: 6px 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #303030;
+  border-color: @accent_color;
+  color: @accent_color;
+  box-shadow: 0 0 8px rgba(225, 196, 125, 0.3);
+}
+
+button:active,
+button:checked {
+  background-color: @accent_color;
+  color: #141414;
+}
+
+button:disabled {
+  background-color: @insensitive_bg_color;
+  color: @insensitive_fg_color;
+  border-color: @borders;
+}
+
+button.suggested-action {
+  background-color: @accent_color;
+  color: #141414;
+  border-color: @accent_color;
+}
+
+button.destructive-action {
+  background-color: @destructive_color;
+  color: #141414;
+  border-color: @destructive_color;
+}
+
+/* Entries (text inputs) */
+entry {
+  background-color: @theme_base_color;
+  color: @theme_text_color;
+  border: 2px solid @borders;
+  border-radius: 0;
+  padding: 8px;
+}
+
+entry:focus {
+  border-color: @accent_color;
+  box-shadow: 0 0 8px rgba(225, 196, 125, 0.3);
+}
+
+entry:disabled {
+  background-color: @insensitive_bg_color;
+  color: @insensitive_fg_color;
+}
+
+/* Scrollbars */
+scrollbar {
+  background-color: @theme_bg_color;
+  border-left: 1px solid @borders;
+}
+
+scrollbar slider {
+  background-color: @borders;
+  border: 2px solid @theme_bg_color;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+scrollbar slider:hover {
+  background-color: #c2a86c;
+}
+
+scrollbar.vertical slider {
+  min-width: 12px;
+}
+
+scrollbar.horizontal slider {
+  min-height: 12px;
+}
+
+/* Menus and Context Menus */
+menu,
+.menu,
+.context-menu {
+  background-color: #262626;
+  color: @theme_fg_color;
+  border: 2px solid @borders;
+  padding: 4px 0;
+}
+
+menuitem,
+.menuitem {
+  padding: 8px 16px;
+}
+
+menuitem:hover,
+.menuitem:hover {
+  background-color: #303030;
+  color: @accent_color;
+}
+
+menuitem:disabled,
+.menuitem:disabled {
+  color: @insensitive_fg_color;
+}
+
+menubar {
+  background-color: #262626;
+  border-bottom: 1px solid @borders;
+}
+
+menubar>menuitem {
+  padding: 8px 12px;
+}
+
+menubar>menuitem:hover {
+  background-color: #303030;
+}
+
+/* Popover */
+popover {
+  background-color: #262626;
+  border: 2px solid @borders;
+  border-radius: 0;
+}
+
+popover>contents {
+  padding: 8px;
+}
+
+/* Notebook/Tabs */
+notebook {
+  background-color: @theme_bg_color;
+}
+
+notebook>header {
+  background-color: #262626;
+  border-bottom: 2px solid @borders;
+}
+
+notebook>header>tabs>tab {
+  background-color: transparent;
+  color: #c2a86c;
+  border-bottom: 2px solid transparent;
+  padding: 12px 24px;
+}
+
+notebook>header>tabs>tab:hover {
+  color: @accent_color;
+}
+
+notebook>header>tabs>tab:checked {
+  color: @theme_fg_color;
+  border-bottom-color: @accent_color;
+}
+
+/* Treeview/Lists */
+treeview {
+  background-color: @theme_base_color;
+  color: @theme_text_color;
+}
+
+treeview:selected {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+treeview.separator {
+  min-height: 1px;
+  color: @borders;
+}
+
+treeview entry {
+  background-color: @theme_base_color;
+  border-radius: 0;
+}
+
+/* Pathbar (breadcrumbs in file manager) */
+.path-bar button {
+  background-color: transparent;
+  border: none;
+  padding: 4px 8px;
+}
+
+.path-bar button:hover {
+  background-color: #303030;
+  color: @accent_color;
+}
+
+.path-bar button.slider-button {
+  border: 2px solid @borders;
+}
+
+/* Selection mode (batch operations) */
+.selection-mode headerbar {
+  background-color: @accent_color;
+  color: #141414;
+}
+
+.selection-mode button {
+  color: #141414;
+}
+
+/* Tooltips */
+tooltip {
+  background-color: #262626;
+  color: @theme_fg_color;
+  border: 1px solid @borders;
+  border-radius: 0;
+  padding: 6px 10px;
+}
+
+tooltip * {
+  background-color: transparent;
+}
+
+/* Progress bars */
+progressbar {
+  background-color: @theme_base_color;
+  border: 1px solid @borders;
+}
+
+progressbar progress {
+  background-color: @accent_color;
+  box-shadow: 0 0 8px rgba(225, 196, 125, 0.5);
+}
+
+/* Checkboxes and Radio buttons */
+checkbutton,
+radiobutton {
+  color: @theme_fg_color;
+}
+
+checkbutton check,
+radiobutton radio {
+  background-color: @theme_base_color;
+  border: 2px solid @borders;
+  border-radius: 0;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+checkbutton:hover check,
+radiobutton:hover radio {
+  border-color: @accent_color;
+}
+
+checkbutton:checked check,
+radiobutton:checked radio {
+  background-color: @accent_color;
+  border-color: @accent_color;
+  -gtk-icon-source: -gtk-recolor(url("assets/check.svg"));
+}
+
+/* Switches */
+switch {
+  background-color: @borders;
+  border: 2px solid @borders;
+  border-radius: 0;
+}
+
+switch:checked {
+  background-color: @accent_color;
+  border-color: @accent_color;
+}
+
+switch slider {
+  background-color: @theme_fg_color;
+  border: 2px solid @theme_bg_color;
+  border-radius: 0;
+}
+
+/* Scales/Sliders */
+scale {
+  min-height: 12px;
+}
+
+scale trough {
+  background-color: @borders;
+  border: 1px solid @borders;
+  border-radius: 0;
+}
+
+scale highlight {
+  background-color: @accent_color;
+}
+
+scale slider {
+  background-color: @theme_fg_color;
+  border: 2px solid @accent_color;
+  border-radius: 0;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/* Spinbuttons */
+spinbutton {
+  background-color: @theme_base_color;
+  border: 2px solid @borders;
+  border-radius: 0;
+}
+
+spinbutton button {
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid @borders;
+}
+
+/* Comboboxes */
+combobox button {
+  padding: 6px 12px;
+}
+
+combobox arrow {
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/* Level bars */
+levelbar block {
+  border-radius: 0;
+}
+
+levelbar block.filled {
+  background-color: @accent_color;
+}
+
+levelbar block.empty {
+  background-color: @borders;
+}
+
+/* Nemo-specific styling */
+.nemo-window .floating-bar {
+  background-color: #262626;
+  border: 2px solid @borders;
+  border-radius: 0;
+  padding: 6px;
+}
+
+.nemo-desktop {
+  color: @theme_fg_color;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Statusbar */
+statusbar {
+  background-color: #262626;
+  color: @theme_fg_color;
+  border-top: 1px solid @borders;
+  padding: 4px 8px;
+}
+
+/* Infobar */
+infobar {
+  border-radius: 0;
+}
+
+infobar.info {
+  background-color: @accent_color;
+  color: #141414;
+}
+
+infobar.warning {
+  background-color: @warning_color;
+  color: #141414;
+}
+
+infobar.error {
+  background-color: @error_color;
+  color: #feffd3;
+}
+
+/* Selection in text */
+selection {
+  background-color: #303030;
+  color: @theme_fg_color;
+}

@@ -1,0 +1,29 @@
+[mgr]
+
+prepend_keymap = [
+
+  # Shortcuts
+	{ on = ["`", "`"], run = "cd /home/carrie",           desc = "Home" },
+	{ on = ["`", "f"], run = "cd /home/carrie/Documents", desc = "Documents" },
+	{ on = ["`", "a"], run = "cd /home/carrie/Pictures",  desc = "Pictures" },
+	{ on = ["`", "c"], run = "cd /home/carrie/.config",   desc = "Config" },
+	{ on = ["`", "d"], run = "cd /home/carrie/Downloads", desc = "Downloads" },
+	{ on = ["`", "v"], run = "cd /home/carrie/Videos",    desc = "Videos" },
+	{ on = ["`", "h"], run = "cd /drives",                desc = "Drives" },
+  { on = ["`", "b"], run = "cd /drives/rei/backup",     desc = "Backup folder"},
+
+  # File / folder creation
+	{ on = ["n", "f"], run = "create --dir",            desc = "New Folder" },
+	{ on = ["n", "d"], run = "create",                  desc = "New File" },
+
+  # Copy pasting
+	{ on = ["c", "x"], run = "cut",                     desc = "Cut File" },
+	{ on = ["c", "c"], run = "yank",                    desc = "Copy File" },
+	{ on = ["c", "v"], run = "paste",                   desc = "Paste File" },
+	{ on = ["d"],      run = "shell '/home/carrie/.config/yazi/scripts/safe-delete.sh \"$@\"' --confirm", desc = "Safe delete to Rei" },
+	{ on = ["<Right>"], run = "plugin smart-enter",     desc = "Smart Enter plugin"},
+	
+	# Archive operations
+	{ on = ["a", "x"], run = "shell '/home/carrie/.config/yazi/scripts/extract-archive.sh \"$@\"' --block --confirm", desc = "Extract archive" },
+	{ on = ["a", "z"], run = "shell '/home/carrie/.config/yazi/scripts/create-archive.sh \"$@\"' --block --confirm", desc = "Create archive" },
+]

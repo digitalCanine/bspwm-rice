@@ -1,0 +1,67 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "03cdd4b"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "03cdd4b"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "03cdd4b"
+hash = "48a77ab785d1ee73bc2d7bbe2a4c2090"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "03cdd4b"
+hash = "36a484acf6a0a0219c543ccb4cee218f"
+
+[[plugin.deps]]
+use = "walldmtd/krita-preview"
+rev = "2a1e66e"
+hash = "b2ae411155320dfc312e0be472978144"
+
+[[plugin.deps]]
+use = "GrzegorzKozub/mdcat"
+rev = "7b7380a"
+hash = "40c20e6c1085d1f45309b9f148bf4f6e"
+
+[[plugin.deps]]
+use = "macydnah/office"
+rev = "41ebef8"
+hash = "5805affd3ae8adcb3c72b6997d21c0a6"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "cfb9140"
+hash = "b5067143415bd2d46c0dfa57319ddcef"
+
+[[plugin.deps]]
+use = "kirasok/torrent-preview"
+rev = "f465282"
+hash = "d849ad596b8a77902e62a42403aeba40"
+
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "c9c16d8"
+hash = "a68bde26a61da040131aa95069f638c2"
+
+[[plugin.deps]]
+use = "gesellkammer/audio-preview"
+rev = "74dfea3"
+hash = "6f185a283a3756475272d147a3c1d29c"
+
+[[plugin.deps]]
+use = "walldmtd/blender-preview"
+rev = "5d824cb"
+hash = "cf3f2d8fab12595e6f09a6cca4734bf4"
+
+[[plugin.deps]]
+use = "AminurAlam/yazi-plugins:preview-audio"
+rev = "658a099"
+hash = "8140a00101a17477f9631028bfebf7a7"
+
+[flavor]
+deps = []
