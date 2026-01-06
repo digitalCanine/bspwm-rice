@@ -1,26 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-############################
-# CONFIG
-############################
-BASE="$HOME/dc-multivpn/providers"
+# Get the directory where the script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE="$SCRIPT_DIR/providers"
 ROFI="rofi -dmenu -i"
 NOTIFY="notify-send"
 VPN_CMD="sudo openvpn"
 
-############################
-# HELPERS
-############################
+# Helpers
 die() {
   $NOTIFY "MultiVPN" "$1"
   exit 1
 }
 pick_random() { printf "%s\n" "$@" | shuf -n1; }
 
-############################
-# PROVIDER MENU
-############################
+# Provider menu
 providers=()
 while IFS= read -r d; do
   [[ -d "$BASE/$d" ]] && providers+=("$d")
@@ -45,9 +40,7 @@ fi
 AUTH="$BASE/$provider/auth"
 SERVER_DIR="$BASE/$provider/servers"
 
-############################
-# BUILD DYNAMIC COUNTRY/CITY MAP
-############################
+# Dynamic city map
 declare -A countries
 declare -A city_country_map
 
@@ -206,9 +199,7 @@ done < <(find "$SERVER_DIR" -name "*.ovpn")
 
 [[ ${#countries[@]} -eq 0 ]] && die "No valid .ovpn files found in $SERVER_DIR"
 
-############################
-# COUNTRY MENU
-############################
+# Country menu
 country_menu="[Random Country]\n"
 country_menu+="$(printf "%s\n" "${!countries[@]}" | sort)"
 country=$(echo -e "$country_menu" | $ROFI -p "Select Country")
@@ -220,9 +211,7 @@ else
   random_country=false
 fi
 
-############################
-# CITY MENU
-############################
+# City menu
 cities=(${countries[$country]})
 
 if [[ "$random_country" == true ]]; then
@@ -247,9 +236,6 @@ else
   fi
 fi
 
-############################
-# SCRAMBLE SELECTION
-############################
 # Check if scrambled servers exist for this city
 mapfile -t scrambled_servers < <(ls "$SERVER_DIR" | grep "^$city-[a-z]\{2\}-[0-9]\{3\}-scramble\.ovpn$" || true)
 mapfile -t regular_servers < <(ls "$SERVER_DIR" | grep "^$city-[a-z]\{2\}-[0-9]\{3\}\.ovpn$" || true)
@@ -284,9 +270,7 @@ else
   die "No servers found for $city_display"
 fi
 
-############################
-# SERVER MENU
-############################
+# Server menu
 if [[ "$use_scramble" == true ]]; then
   server_files=("${scrambled_servers[@]}")
   connection_type="🔒 Scrambled"
@@ -328,33 +312,23 @@ else
   fi
 fi
 
-############################
-# PROMPT SUDO PASSWORD
-############################
+# Ask for sudo
 SUDO_PASS=$(rofi -dmenu -password -p "Enter sudo password")
 [[ -z "$SUDO_PASS" ]] && exit 0
 
-############################
-# DISCONNECT ANY EXISTING VPN
-############################
+# Kill old VPN if existing
 echo "$SUDO_PASS" | sudo -S pkill openvpn 2>/dev/null || true
 
-############################
-# NOTIFY CONNECTION START
-############################
+# Notify
 $NOTIFY "MultiVPN" "Connecting…\n$provider → $country → $city_display\nType: $connection_type"
 
-############################
-# LAUNCH OPENVPN
-############################
+# Launch openvpn
 echo "$SUDO_PASS" | sudo -S openvpn --config "$SERVER_DIR/$server_file" --auth-user-pass "$AUTH" &
 
 # Wait for VPN to establish and routing to settle
 sleep 8
 
-############################
-# GET PUBLIC IP
-############################
+# Get public IP
 # Retry a few times to ensure we get the VPN IP
 for i in {1..3}; do
   ip=$(curl -s --max-time 5 ifconfig.me 2>/dev/null || echo "")
