@@ -164,15 +164,6 @@ Key configuration locations:
 | `Super + Escape + R` | Reload sxhkd |
 | `Super + Delete` | Quit bspwm |
 
-## 📝 System Information
-
-- **OS**: Arch Linux
-- **Kernel**: 6.10.3-arch1-1
-- **Shell**: Fish 4.3.2
-- **Terminal**: Kitty 0.44.0
-- **Package Manager**: pacman
-- **WM**: LG3D (X11)
-
 ## 🚀 Installation
 
 1. Clone this repository
