@@ -4,13 +4,13 @@ A dark, warm-themed bspwm rice featuring golden/amber accents inspired by sunset
 
 ![Desktop](./images/desktop.png)
 
-## 🎨 Theme
+## Theme
 
 - **Color Scheme**: Dark base with golden/amber highlights and warm brown tones
 - **Wallpaper**: Custom artwork featuring golden lighting effects
 - **Overall Aesthetic**: Warm, cozy, and visually unified
 
-## 📦 Components
+## Components
 
 ### Window Manager
 
@@ -45,7 +45,7 @@ A dark, warm-themed bspwm rice featuring golden/amber accents inspired by sunset
 - **ranger/lf** - Terminal file managers
 - **Various CLI tools** - fish shell, neofetch, etc.
 
-## 🖼️ Screenshots
+## Screenshots
 
 ### Desktop
 
@@ -91,7 +91,7 @@ Key configuration locations:
 - `~/.config/yazi/` - Terminal file manager
 - `~/.theme/` - Custom GTK/Qt color themes
 
-## 🎯 Key Features
+## Key Features
 
 - **Smooth Animations**: Window sliding and fading effects via picom
 - **Unified Color Scheme**: Golden/amber theme across terminal, editor, and applications
@@ -164,7 +164,7 @@ Key configuration locations:
 | `Super + Escape + R` | Reload sxhkd |
 | `Super + Delete` | Quit bspwm |
 
-## 🚀 Installation
+## Installation
 
 1. Clone this repository
 
@@ -192,7 +192,7 @@ Key configuration locations:
    # or use the keybind: Ctrl + Shift + R
    ```
 
-## 📋 Dependencies
+## Dependencies
 
 ```
 legcord
@@ -223,14 +223,14 @@ xorg
 
 - [digitalCanine's MultiVPN](https://github.com/digitalcanine/multivpn) - VPN manager using OpenVPN profiles
 
-## 🎨 Color Palette
+## Color Palette
 
 - Background: #141414 - Deep charcoal
 - Foreground: #feffd3 - Soft cream
 - Cursor: #ffffff - Pure white
 - Selection: #303030 (bg) / #141414 (fg)
 
-## 📄 License
+## License
 
 Feel free to use and modify these configurations for your own setup!
 
