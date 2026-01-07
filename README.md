@@ -72,7 +72,7 @@ A dark, warm-themed bspwm rice featuring golden/amber accents inspired by sunset
 ![Terminal](./images/terminal.png)
 *Terminal with system information, image viewer, and music player*
 
-## ⚙️ Configuration Files
+## Configuration Files
 
 Key configuration locations:
 
@@ -89,6 +89,7 @@ Key configuration locations:
 - `~/.config/scripts/` - Custom scripts
 - `~/.config/spotatui/` - Spotify TUI client
 - `~/.config/yazi/` - Terminal file manager
+- `~.config/legcord/themes` - Discord theme
 - `~/.theme/` - Custom GTK/Qt color themes
 
 ## Key Features
@@ -233,7 +234,3 @@ xorg
 ## License
 
 Feel free to use and modify these configurations for your own setup!
-
----
-
-*A cozy, warm rice for those late-night coding sessions* ☕✨
