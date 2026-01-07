@@ -217,6 +217,7 @@ firefox         # Web browser
 signal-desktop  # Messaging app
 simplescreenrecorder  # Screen recording
 feh             # Image viewer
+legcord         # Discord client
 xorg
 ```
 
