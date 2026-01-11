@@ -19,7 +19,7 @@ window {
     padding:            0px;
     location:           north;
     anchor:             north;
-    y-offset:           36;  /* Adjust to match your polybar height */
+    y-offset:           33;
     x-offset:           0;
 }
 
@@ -30,7 +30,7 @@ mainbox {
     border:             0px;
 }
 
-/* Top bar - terminal prompt style */
+/* Top bar */
 inputbar {
     background-color:   transparent;
     text-color:         @main-fg;
@@ -59,7 +59,7 @@ entry {
     font:               "JetBrainsMono Nerd Font 12";
 }
 
-/* Message box (if used) */
+/* Message box */
 message {
     background-color:   transparent;
     padding:            8px 12px;
@@ -71,19 +71,19 @@ textbox {
     font:               "JetBrainsMono Nerd Font 10";
 }
 
-/* List view - like ls/eza output */
+/* List view  */
 listview {
     background-color:   transparent;
     spacing:            0px;
     padding:            8px 12px;
     scrollbar:          false;
-    lines:              5;  /* 5 entries as requested */
+    lines:              5;  
     fixed-height:       true;
     columns:            1;
     layout:             vertical;
 }
 
-/* List elements - ls output style */
+/* List elements */
 element {
     background-color:   transparent;
     text-color:         @main-fg;
@@ -121,7 +121,7 @@ element alternate.active {
     text-color:         @main-br;
 }
 
-/* Selected item - like terminal cursor/highlight */
+/* Selected item */
 element selected.normal {
     background-color:   @select-bg;
     text-color:         @select-fg;
@@ -140,7 +140,7 @@ element selected.active {
     border:             0px;
 }
 
-/* Icons - small and dim like ls indicators */
+/* Icon */
 element-icon {
     background-color:   transparent;
     size:               0.9em;
@@ -159,7 +159,7 @@ element selected element-text {
     text-color:         @select-fg;
 }
 
-/* Mode switcher - hide it since we're using >> prompt */
+/* Mode switcher */
 mode-switcher {
     enabled:            false;
 }
