@@ -89,7 +89,7 @@ Key configuration locations:
 - `~/.config/scripts/` - Custom scripts
 - `~/.config/spotatui/` - Spotify TUI client
 - `~/.config/yazi/` - Terminal file manager
-- `~.config/legcord/themes` - Discord theme
+- `~/.config/legcord/themes` - Discord theme
 - `~/.theme/` - Custom GTK/Qt color themes
 
 ## Key Features
